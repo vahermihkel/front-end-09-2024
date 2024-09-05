@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Ostukorv() {
   return (
     <div>
       <div>Ostukorv on tühi</div>
-      <button>Mine tooteid lisama</button>
+      <div>Mine tooteid lisama <Link to="/avaleht">avalehele</Link> </div>
     </div>
   )
 }

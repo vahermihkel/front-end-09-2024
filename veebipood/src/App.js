@@ -1,44 +1,26 @@
 //import logo from "./logo.svg";
 import './App.css';
-import {Link, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Avaleht from './pages/Avaleht';
 import Kinkekaart from './pages/Kinkekaart';
 import Esindused from './pages/Esindused';
 import Ostukorv from './pages/Ostukorv';
 import LisaToode from './pages/LisaToode';
 import Seaded from './pages/Seaded';
+import NotFound from './pages/NotFound';
+import Menyy from './components/Menyy';
 
 function App() {
   return (
     <div className="App">
       {/* MENÜÜ ---> on igal lehel  nähtav */}
 
-      <Link to="avaleht">
-        <img className="pilt" src="https://estonia.ee/wp-content/uploads/nobe_netist_4.jpg" alt="" />
-      </Link>
-
-      <Link to="osta-kinkekaart">
-        <button className="nupp">Kinkekaart</button>
-      </Link>
-
-      <Link to="esindused">
-        <button className="nupp">Esindused</button>
-      </Link>
-
-      <Link to="ostukorv">
-        <button className="nupp">Ostukorv</button>
-      </Link>
-
-      <Link to="lisa-toode">
-        <button className="nupp">Lisa toode</button>
-      </Link>
-
-      <Link to="seaded">
-        <button className="nupp">Seaded</button>
-      </Link>
+      <Menyy />
 
     
     {/* localhost:3000/avaleht  --->   <div>Olen avalehel</div> */}
+    {/* localhost:3000/osta-kinkekaart  --->   <div>Kinkekaart</div> */}
+
       <Routes>
         <Route path='avaleht' element={ <Avaleht/> } />
         <Route path='osta-kinkekaart' element={ <Kinkekaart /> } />
@@ -46,6 +28,7 @@ function App() {
         <Route path='ostukorv' element={ <Ostukorv /> } />
         <Route path='lisa-toode' element={ <LisaToode /> } />
         <Route path='seaded' element={ <Seaded /> } />
+        <Route path='*' element={ <NotFound /> } />
       </Routes>
     </div>
   );
@@ -59,3 +42,13 @@ export default App;
 // koodis on viga, kokkupakkimisel
 
 // warning --> kollane. leht töötab, aga oleme teinud midagi üleliigset
+
+// 404 not found leht --> route
+// puu, kuidas React töötab
+// Routing uuesti üle
+
+// usestate
+
+// lokaalne pilt
+
+// Single-Page Application   SPA
