@@ -31,5 +31,24 @@
   transform: scale(90%);
 }
 
+.summa-aktiivne {
+  border-color: brown;
+  border-width: 3px;
+}
 
+.linn-aktiivne {
+  text-decoration: underline;
+}
 
+.keel-aktiivne {
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: chocolate;
+}
+
+.keel {
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
