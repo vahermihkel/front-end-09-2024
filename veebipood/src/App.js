@@ -9,6 +9,9 @@ import LisaToode from './pages/LisaToode';
 import Seaded from './pages/Seaded';
 import NotFound from './pages/NotFound';
 import Menyy from './components/Menyy';
+import Profiil from './pages/Profiil';
+import LogiSisse from './pages/LogiSisse';
+import Registreeru from './pages/Registreeru';
 
 function App() {
   return (
@@ -29,6 +32,11 @@ function App() {
         <Route path='ostukorv' element={ <Ostukorv /> } />
         <Route path='lisa-toode' element={ <LisaToode /> } />
         <Route path='seaded' element={ <Seaded /> } />
+
+        <Route path='profiil' element={ <Profiil /> } />
+        <Route path='logi-sisse' element={ <LogiSisse /> } />
+        <Route path='registreeru' element={ <Registreeru /> } />
+
         <Route path='*' element={ <NotFound /> } />
       </Routes>
     </div>
