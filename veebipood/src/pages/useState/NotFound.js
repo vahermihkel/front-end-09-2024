@@ -1,8 +1,10 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import KontaktAndmed from '../../components/KontaktAndmed'
 
 
 function NotFound() {
+
+
   return (
     <div>
       <h2>Oh häda!</h2>
@@ -11,6 +13,8 @@ function NotFound() {
         Mine tagasi 
         <Link to="/avaleht">Veebipoe avalehele.</Link>
       </p>
+
+      <KontaktAndmed />
     </div>
   )
 }

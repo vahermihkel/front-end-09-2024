@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import KontaktAndmed from '../../components/KontaktAndmed';
 
 function Avaleht() {
 // kõik mida pole tavalises JavaScriptis ja on Reactis, tuleb importida. useState, useRef
@@ -67,6 +68,8 @@ function Avaleht() {
       <button disabled={kogus === 0} onClick={vahenda}>-</button>
       <span>{kogus}</span>
       <button onClick={suurenda}>+</button>
+
+      <KontaktAndmed />
     </div>
   )
 }
