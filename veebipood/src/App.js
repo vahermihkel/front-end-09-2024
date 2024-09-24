@@ -18,6 +18,10 @@ import Menyy from './components/Menyy';
 import Hinnad from './pages/arrays/Hinnad';
 import Tootajad from './pages/arrays/Tootajad';
 import Tooted from './pages/arrays/Tooted';
+import HaldaEsindused from './pages/halda/HaldaEsindused';
+import HaldaHinnad from './pages/halda/HaldaHinnad';
+import HaldaTootajad from './pages/halda/HaldaTootajad';
+import HaldaTooted from './pages/halda/HaldaTooted';
 
 
 function App() {
@@ -47,6 +51,11 @@ function App() {
         <Route path='hinnad' element={ <Hinnad /> } />
         <Route path='tootajad' element={ <Tootajad /> } />
         <Route path='tooted' element={ <Tooted /> } />
+
+        <Route path='halda-esindused' element={ <HaldaEsindused /> } />
+        <Route path='halda-hinnad' element={ <HaldaHinnad /> } />
+        <Route path='halda-tootajad' element={ <HaldaTootajad /> } />
+        <Route path='halda-tooted' element={ <HaldaTooted /> } />
 
         <Route path='*' element={ <NotFound /> } />
       </Routes>

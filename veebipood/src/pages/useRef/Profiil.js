@@ -21,6 +21,10 @@ function Profiil() {
 
   const sisestaTelefon = () => {
     setTelefon(telefonRef.current.value);
+    
+    // setTelefon(Number(telefonRef.current.value) + Number(telefonRef.current.value));
+
+    // setTelefon(+telefonRef.current.value + +telefonRef.current.value);
   }
 
   return (
