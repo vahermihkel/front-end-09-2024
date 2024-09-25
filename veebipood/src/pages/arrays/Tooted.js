@@ -16,6 +16,14 @@ import React from 'react'
   // Filtreeri
   // 3 nuppu: Bga algavad, Nga algavad, Tga algavad
 
+  // ----------------------
+
+  // Faili tõstmine
+
+  // Arvuta tähed kokku
+
+  // Otsing
+
 function Tooted() {
   return (
     <div>Tooted</div>

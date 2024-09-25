@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import hinnadJSON from "../../data/hinnad.json"
 
 function Hinnad() {
-  const [hinnad, muudaHinnad] = useState([20, 8, 150, 3, 123, 32, 9, 1111, 71, 55]);
+  const [hinnad, muudaHinnad] = useState(hinnadJSON);
+  const otsingRef = useRef();
 
   const reset = () => {
-    muudaHinnad([20, 8, 150, 3, 123, 32, 9, 1111, 71, 55]);
+    muudaHinnad(hinnadJSON);
   }
 
   const sorteeriKasvavalt = () => {
@@ -29,17 +31,52 @@ function Hinnad() {
   }
 
   const filtreeriSuuremadKui20 = () => {
-    const vastus = hinnad.filter(hind => hind > 20);
+    const vastus = hinnadJSON.filter(hind => hind > 20);
     muudaHinnad(vastus);
   }
 
   const filtreeriVaiksemadKui100 = () => {
-    const vastus = hinnad.filter(hind => hind < 100);
+    const vastus = hinnadJSON.filter(hind => hind < 100);
+    muudaHinnad(vastus);
+  }
+
+  // const [summa2, muudaSumma] = useState(0);
+
+// const --> võrdusmärgiga ei saa uut väärtust anda
+// let --> luba anda uus väärtus võrdusmärgiga
+
+  const liidaKokku = () => {
+    let summa = 0;
+    // summa = summa + 20;
+    // summa = summa + 8;
+    // summa = summa + 150;
+    // summa = summa + 3;
+    hinnad.forEach(hind => summa = summa + hind);
+
+    // muudaSumma(summa);
+    return summa;
+  }
+
+  // onClick={lisa}  --> muutujat ei saa funktsiooni kaasa
+  // onClick={() => kustuta(index)} --> muutuja saadan funktsiooni
+  //xx onClick={liidaKokku()} ---> see on vale, sest ta ei oota klikki ära, vaid paneb kohe käima
+
+  // <div>{liidaKokku()}</div> --> paneb funktsiooni koheselt käima
+  //xx <div>{liidaKokku}</div> --> keegi ei käivita
+  //xx <div>{() => liidaKokku()}</div> --> keegi ei käivita
+
+  const otsi = () => {
+    const vastus = hinnadJSON.filter(hind => String(hind).includes(otsingRef.current.value) );
     muudaHinnad(vastus);
   }
 
   return (
     <div>
+      <input ref={otsingRef} onChange={otsi} type="text" />
+      {/* <button onClick={otsi}>Otsi</button> */}
+      <div>Minu hindade kogusumma: {liidaKokku()} €</div>
+      {/* <button onClick={liidaKokku}>Uuenda hindade kogusumma</button> */}
+      <br />  
       <br />
       <button onClick={reset}>Reset</button>
       <br /><br />

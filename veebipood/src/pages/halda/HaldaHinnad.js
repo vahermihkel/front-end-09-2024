@@ -1,47 +1,48 @@
 import React, { useRef, useState } from 'react'
+import hinnadJSON from "../../data/hinnad.json";
 
 function HaldaHinnad() {
-  const [hinnad, muudaHinnad] = useState([20, 8, 150, 3, 123, 32, 9, 1111, 71, 55]);
+  const [hinnad, muudaHinnad] = useState(hinnadJSON);
   const hindRef = useRef();
 
   const kustutaEsimene = () => {
-    hinnad.splice(0,1);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.splice(0,1);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const kustutaTeine = () => {
-    hinnad.splice(1,1);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.splice(1,1);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const kustutaKolmas = () => {
-    hinnad.splice(2,1);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.splice(2,1);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const kustutaNeljas = () => {
-    hinnad.splice(3,1);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.splice(3,1);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const lisa = () => {
-    hinnad.push(hindRef.current.value);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.push(hindRef.current.value);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const lisa789 = () => {
-    hinnad.push(789);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.push(789);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const lisa432 = () => {
-    hinnad.push(432);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.push(432);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const kustuta = (index) => {
-    hinnad.splice(index,1);
-    muudaHinnad(hinnad.slice());
+    hinnadJSON.splice(index,1);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   return (

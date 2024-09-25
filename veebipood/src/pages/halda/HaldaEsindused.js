@@ -1,52 +1,53 @@
 import React, { useRef, useState } from 'react'
+import esindusedFailist from "../../data/esindused.json";
 
 function HaldaEsindused() {
-  const [keskused, muudaKeskused] = useState(["Ülemiste","Rocca al Mare","Magistrali", "Vesse", "Kristiine", "Järveotsa"]);
+  const [keskused, muudaKeskused] = useState(esindusedFailist);
   const keskusRef = useRef();
 
   const tyhjenda = () => {
-    keskused.splice(0);
-    muudaKeskused(keskused.slice());
+    esindusedFailist.splice(0);
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const lisaSaue = () => {
-    keskused.push("Saue");
-    muudaKeskused(keskused.slice());
+    esindusedFailist.push("Saue");
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const lisaSaku = () => {
-    keskused.push("Saku");
-    muudaKeskused(keskused.slice());
+    esindusedFailist.push("Saku");
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const lisa = () => {
-    keskused.push(keskusRef.current.value);
-    muudaKeskused(keskused.slice());
+    esindusedFailist.push(keskusRef.current.value);
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const kustutaEsimene = () => {
-    keskused.splice(0,1);
-    muudaKeskused(keskused.slice());
+    esindusedFailist.splice(0,1);
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const kustutaTeine = () => {
-    keskused.splice(1,1);
-    muudaKeskused(keskused.slice());
+    esindusedFailist.splice(1,1);
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const kustutaKolmas = () => {
-    keskused.splice(2,1);
-    muudaKeskused(keskused.slice());
+    esindusedFailist.splice(2,1);
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const kustutaNeljas = () => {
-    keskused.splice(3,1);
-    muudaKeskused(keskused.slice());
+    esindusedFailist.splice(3,1);
+    muudaKeskused(esindusedFailist.slice());
   }
 
   const kustuta = (nr) => {
-    keskused.splice(nr, 1);
-    muudaKeskused(keskused.slice());
+    esindusedFailist.splice(nr, 1);
+    muudaKeskused(esindusedFailist.slice());
   }
 
   return (

@@ -30,6 +30,14 @@ import React from 'react'
 
   // Reset nupp
 
+  // ----------------------
+
+  // Faili tõstmine
+
+  // Arvuta tähed kokku
+
+  // Otsing
+
 
 function Tootajad() {
   return (
