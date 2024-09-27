@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import hinnadJSON from "../../data/hinnad.json";
+import { Link } from 'react-router-dom';
 
 function HaldaHinnad() {
   const [hinnad, muudaHinnad] = useState(hinnadJSON);
@@ -60,7 +61,15 @@ function HaldaHinnad() {
       <button onClick={lisa789}>Lisa 789</button>
       <button onClick={lisa432}>Lisa 432</button>
       <br />
-      {hinnad.map((hind, index) => <button onClick={() => kustuta(index)}>{hind}</button>)}
+      {hinnad.map((hind, index) => 
+      <div>
+        <div>{hind}</div>
+        <button onClick={() => kustuta(index)}>x</button>
+        <Link to={"/muuda-hind/" + index}>
+          <button>Muuda</button>
+        </Link>
+      </div>
+      )}
     </div>
   )
 }

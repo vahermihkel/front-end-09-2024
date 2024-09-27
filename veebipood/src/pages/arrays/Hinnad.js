@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import hinnadJSON from "../../data/hinnad.json"
+import { Link } from 'react-router-dom';
 
 function Hinnad() {
   const [hinnad, muudaHinnad] = useState(hinnadJSON);
@@ -89,7 +90,11 @@ function Hinnad() {
       <button onClick={filtreeriVaiksemadKui100}>Filtreeri väiksemad kui 100</button>
       <br /><br />
 
-      {hinnad.map(hind => <button>{hind}</button>)}
+      {hinnad.map((hind, index) => 
+      <Link to={"/hind/" + index}>
+        <button>{hind}</button>
+      </Link>
+      )}
     </div>
   )
 }

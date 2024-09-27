@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import esindusedFailist from "../../data/esindused.json"
+import { Link } from 'react-router-dom';
 
 // .sort((a,b) =>  a - b  )
 // lahutamistehe - paneb numbrid järjekorda
@@ -113,7 +114,13 @@ function Esindused() {
           <button onClick={filtreeriIsSisaldavad}>Filtreeri lühendit 'is' sisaldavad</button>
           <button onClick={filtreeriNeljasTahtS}>Filtreeri kellel on neljas täht 's'</button>
           <br />
-          {keskused.map(keskus => <div>{keskus} <button>Vt lähemalt</button> </div>)}
+          {keskused.map((keskus, index) => 
+            <div>
+              {keskus} 
+              <Link to={"/esindus/" + index}>
+                <button>Vt lähemalt</button> 
+              </Link>
+            </div>)}
           {/* <div>Ülemiste</div>
           <div>Rocca al Mare</div>
           <div>Magistrali</div>

@@ -8,6 +8,10 @@ function Menyy() {
         <img className="pilt" src="https://estonia.ee/wp-content/uploads/nobe_netist_4.jpg" alt="" />
       </Link>
 
+      <Link to="/kontakteeru">
+        <button className="nupp">Kontakteeru</button>
+      </Link>
+
       <Link to="/osta-kinkekaart">
         <button className="nupp">Kinkekaart</button>
       </Link>

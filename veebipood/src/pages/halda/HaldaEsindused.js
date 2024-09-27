@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import esindusedFailist from "../../data/esindused.json";
+import { Link } from 'react-router-dom';
 
 function HaldaEsindused() {
   const [keskused, muudaKeskused] = useState(esindusedFailist);
@@ -71,6 +72,9 @@ function HaldaEsindused() {
         <div>
           {keskus}
           <button onClick={() => kustuta(jrknr)}>x</button>
+          <Link to={"/muuda-esindus/" + jrknr}>
+            <button>Muuda</button>
+          </Link>
         </div>)}
     </div>
   )

@@ -22,6 +22,15 @@ import HaldaEsindused from './pages/halda/HaldaEsindused';
 import HaldaHinnad from './pages/halda/HaldaHinnad';
 import HaldaTootajad from './pages/halda/HaldaTootajad';
 import HaldaTooted from './pages/halda/HaldaTooted';
+import YksEsindus from './pages/yks/YksEsindus';
+import YksHind from './pages/yks/YksHind';
+import YksToode from './pages/yks/YksToode';
+import YksTootaja from './pages/yks/YksTootaja';
+import MuudaEsindus from './pages/muuda/MuudaEsindus';
+import MuudaHind from './pages/muuda/MuudaHind';
+import MuudaToode from './pages/muuda/MuudaToode';
+import MuudaTootaja from './pages/muuda/MuudaTootaja';
+import { ContactUs } from './pages/useRef/ContactUs';
 
 
 function App() {
@@ -57,6 +66,18 @@ function App() {
         <Route path='halda-tootajad' element={ <HaldaTootajad /> } />
         <Route path='halda-tooted' element={ <HaldaTooted /> } />
 
+        <Route path='esindus/:index' element={ <YksEsindus /> } />
+        <Route path='hind/:index' element={ <YksHind /> } />
+        <Route path='tootaja' element={ <YksTootaja /> } />
+        <Route path='toode' element={ <YksToode /> } />
+
+        <Route path='muuda-esindus/:index' element={ <MuudaEsindus /> } />
+        <Route path='muuda-hind/:index' element={ <MuudaHind /> } />
+        <Route path='muuda-tootaja' element={ <MuudaTootaja /> } />
+        <Route path='muuda-toode' element={ <MuudaToode /> } />
+        
+        <Route path='kontakteeru' element={ <ContactUs /> } />
+
         <Route path='*' element={ <NotFound /> } />
       </Routes>
     </div>
@@ -90,9 +111,9 @@ export default App;
 // N 19.09   9.00-12.15
 // 7. K 25.09   9.00-12.15   forEach, onChange, kohe käimaminekul
 // 8. R 27.09   9.00-12.15
-// 9. E 30.09   9.00-12.15
-// 10. N 03.10??   9.00-12.15
-// 11.
+// 9. E 30.09   9.00-12.15   objektid
+// 10. N 03.10??   9.00-12.15   Leaflet, BootStrap
+// 11. 
 // 12.
 // 13.
 // 14.
