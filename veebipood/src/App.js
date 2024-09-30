@@ -31,6 +31,8 @@ import MuudaHind from './pages/muuda/MuudaHind';
 import MuudaToode from './pages/muuda/MuudaToode';
 import MuudaTootaja from './pages/muuda/MuudaTootaja';
 import { ContactUs } from './pages/useRef/ContactUs';
+import Admin from './pages/useState/Admin';
+import Shops from './pages/useState/Shops';
 
 
 function App() {
@@ -77,6 +79,8 @@ function App() {
         <Route path='muuda-toode' element={ <MuudaToode /> } />
         
         <Route path='kontakteeru' element={ <ContactUs /> } />
+        <Route path='admin' element={ <Admin /> } />
+        <Route path='shops' element={ <Shops /> } />
 
         <Route path='*' element={ <NotFound /> } />
       </Routes>
@@ -111,10 +115,10 @@ export default App;
 // N 19.09   9.00-12.15
 // 7. K 25.09   9.00-12.15   forEach, onChange, kohe käimaminekul
 // 8. R 27.09   9.00-12.15
-// 9. E 30.09   9.00-12.15   objektid
-// 10. N 03.10??   9.00-12.15   Leaflet, BootStrap
+// 9. E 30.09   9.00-12.15   react-i18next, Leaflet, BootStrap
+// 10. N 03.10??   9.00-12.15   objekt
 // 11. 
-// 12.
+// 12.           kodused ülesanded --> Webshop
 // 13.
 // 14.
 // 15. 21.10

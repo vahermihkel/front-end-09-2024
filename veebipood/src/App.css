@@ -52,3 +52,9 @@
   font-weight: bold;
   border-radius: 5px;
 }
+
+.map {
+  height: 300px;
+  margin: 3%;
+  border-radius: 20px;
+}

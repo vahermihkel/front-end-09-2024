@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next';
 
 function Ostukorv() {
+  const { t } = useTranslation();
   const [tooted, muudaTooted] = useState(["Coca", "Fanta", "Sprite"]);
 
   const tyhjenda = () => {
@@ -26,7 +28,7 @@ function Ostukorv() {
 
   return (
     <div>
-      {tooted.length > 0 && <button onClick={tyhjenda}>Tühjenda</button>}
+      {tooted.length > 0 && <button onClick={tyhjenda}>{t("empty")}</button>}
 
       {tooted.length > 0 && <div>Tooteid kokku ostukorvis: {tooted.length} tk</div>}
 

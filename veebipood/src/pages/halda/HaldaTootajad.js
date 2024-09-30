@@ -1,5 +1,8 @@
 import React from 'react'
 
+// faili importimine
+// välja kuvamine
+
 // * lisamine mingi kindla Töötaja osas
 // lisamine läbi vormi
 // * kustutamine esimene, teine, kolmas, neljas
