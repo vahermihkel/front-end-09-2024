@@ -6,11 +6,19 @@ function MuudaEsindus() {
   const {index} = useParams();
   const leitud = esindusedFailist[index];
 
+  const muuda = () => {
+    // KOJU 
+  }
+
   return (
     <div>
-      <label>Esindus</label><br />
-      <input type="text" defaultValue={leitud} /> <br />
-      <button>Muuda</button>
+      <label>Esinduse nimi</label><br />
+      <input type="text" defaultValue={leitud.nimi} /> <br />
+      <label>Esinduse telefon</label><br />
+      <input type="text" defaultValue={leitud.tel} /> <br />
+      <label>Esinduse aadress</label><br />
+      <input type="text" defaultValue={leitud.aadr} /> <br />
+      <button onClick={muuda}>Muuda</button>
     </div>
   )
 }

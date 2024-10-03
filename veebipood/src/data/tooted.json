@@ -1,0 +1,8 @@
+[
+  {"nimi": "Nobe", "hind": 25000, "aktiivne": true, "keskus": "Ülemiste", "pilt": "http:// .jpg vms lõpuga"},
+  {"nimi": "BMW", "hind": 55000, "aktiivne": true, "keskus": "Ülemiste", "pilt": "http:// .jpg vms lõpuga"},
+  {"nimi": "Tesla", "hind": 85000, "aktiivne": false, "keskus": "Vesse", "pilt": "http:// .jpg vms lõpuga"},
+  {"nimi": "Bentley", "hind": 125000, "aktiivne": true, "keskus": "Kristiine", "pilt": "http:// .jpg vms lõpuga"},
+  {"nimi": "Toyota", "hind": 45000, "aktiivne": false, "keskus": "Järveotsa", "pilt": "http:// .jpg vms lõpuga"},
+  {"nimi": "Nissan", "hind": 35000, "aktiivne": true, "keskus": "Ülemiste", "pilt": "http:// .jpg vms lõpuga"}
+]

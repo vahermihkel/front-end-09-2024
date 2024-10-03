@@ -3,41 +3,40 @@ import hinnadJSON from "../../data/hinnad.json"
 import { Link } from 'react-router-dom';
 
 function Hinnad() {
-  const [hinnad, muudaHinnad] = useState(hinnadJSON);
+  const [hinnad, muudaHinnad] = useState(hinnadJSON.slice());
   const otsingRef = useRef();
 
   const reset = () => {
-    muudaHinnad(hinnadJSON);
+    muudaHinnad(hinnadJSON.slice());
   }
 
   const sorteeriKasvavalt = () => {
-    hinnad.sort((a, b) => a - b);
+    hinnad.sort((a, b) => a.number - b.number);
     muudaHinnad(hinnad.slice());
   }
 
   const sorteeriKahanevalt = () => {
-    hinnad.sort((a, b) => b - a);
+    hinnad.sort((a, b) => b.number - a.number);
     muudaHinnad(hinnad.slice());
   }
 
   const sorteeriAZ = () => {
-    hinnad.sort();
+    hinnad.sort((a,b) => String(a.number).localeCompare(String(b.number)));
     muudaHinnad(hinnad.slice());
   }
 
   const sorteeriZA = () => {
-    hinnad.sort();
-    hinnad.reverse();
+    hinnad.sort((a,b) => String(b.number).localeCompare(String(a.number)));
     muudaHinnad(hinnad.slice());
   }
 
   const filtreeriSuuremadKui20 = () => {
-    const vastus = hinnadJSON.filter(hind => hind > 20);
+    const vastus = hinnadJSON.filter(hind => hind.number > 20);
     muudaHinnad(vastus);
   }
 
   const filtreeriVaiksemadKui100 = () => {
-    const vastus = hinnadJSON.filter(hind => hind < 100);
+    const vastus = hinnadJSON.filter(hind => hind.number < 100);
     muudaHinnad(vastus);
   }
 
@@ -52,7 +51,7 @@ function Hinnad() {
     // summa = summa + 8;
     // summa = summa + 150;
     // summa = summa + 3;
-    hinnad.forEach(hind => summa = summa + hind);
+    hinnad.forEach(hind => summa = summa + hind.number);
 
     // muudaSumma(summa);
     return summa;
@@ -67,7 +66,7 @@ function Hinnad() {
   //xx <div>{() => liidaKokku()}</div> --> keegi ei käivita
 
   const otsi = () => {
-    const vastus = hinnadJSON.filter(hind => String(hind).includes(otsingRef.current.value) );
+    const vastus = hinnadJSON.filter(hind => String(hind.number).includes(otsingRef.current.value) );
     muudaHinnad(vastus);
   }
 
@@ -92,7 +91,7 @@ function Hinnad() {
 
       {hinnad.map((hind, index) => 
       <Link to={"/hind/" + index}>
-        <button>{hind}</button>
+        <button>{hind.number}</button>
       </Link>
       )}
     </div>

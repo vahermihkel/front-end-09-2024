@@ -71,12 +71,12 @@ function App() {
         <Route path='esindus/:index' element={ <YksEsindus /> } />
         <Route path='hind/:index' element={ <YksHind /> } />
         <Route path='tootaja' element={ <YksTootaja /> } />
-        <Route path='toode' element={ <YksToode /> } />
+        <Route path='toode/:index' element={ <YksToode /> } />
 
         <Route path='muuda-esindus/:index' element={ <MuudaEsindus /> } />
         <Route path='muuda-hind/:index' element={ <MuudaHind /> } />
         <Route path='muuda-tootaja' element={ <MuudaTootaja /> } />
-        <Route path='muuda-toode' element={ <MuudaToode /> } />
+        <Route path='muuda-toode/:index' element={ <MuudaToode /> } />
         
         <Route path='kontakteeru' element={ <ContactUs /> } />
         <Route path='admin' element={ <Admin /> } />
@@ -116,7 +116,7 @@ export default App;
 // 7. K 25.09   9.00-12.15   forEach, onChange, kohe käimaminekul
 // 8. R 27.09   9.00-12.15
 // 9. E 30.09   9.00-12.15   react-i18next, Leaflet, BootStrap
-// 10. N 03.10??   9.00-12.15   objekt
+// 10. N 03.10??   9.00-12.15   objekt: Muutmine, Ostukorv, Number/String/Boolean convert
 // 11. 
 // 12.           kodused ülesanded --> Webshop
 // 13.
@@ -125,3 +125,8 @@ export default App;
 // 16. 24.10
 // 17. 28.10
 // 18. 06.11
+
+// KOJU:
+// Töötajad objektiks {nimi, tel, ametikoht, email}
+// MuudaEsindus, MuudaTootaja
+// Failid

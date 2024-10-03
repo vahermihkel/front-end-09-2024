@@ -1,30 +1,27 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
+import ostukorvFailist from "../../data/ostukorv.json";
 
 function Ostukorv() {
   const { t } = useTranslation();
-  const [tooted, muudaTooted] = useState(["Coca", "Fanta", "Sprite"]);
+  const [tooted, muudaTooted] = useState(ostukorvFailist.slice());
 
   const tyhjenda = () => {
-    tooted.splice(0);
-    muudaTooted(tooted.slice());
+    ostukorvFailist.splice(0);
+    muudaTooted(ostukorvFailist.slice());
   }
 
   const kustuta = (index) => {
-    tooted.splice(index,1);
-    muudaTooted(tooted.slice());
+    ostukorvFailist.splice(index,1);
+    muudaTooted(ostukorvFailist.slice());
   }
 
-  // const kustutaTeine = () => {
-  //   tooted.splice(1,1);
-  //   muudaTooted(tooted.slice());
-  // }
-
-  // const kustutaKolmas = () => {
-  //   tooted.splice(2,1);
-  //   muudaTooted(tooted.slice());
-  // }
+  const arvutaKokku = () => {
+    let summa = 0;
+    tooted.forEach(toode => summa = summa + toode.hind);
+    return summa;
+  }
 
   return (
     <div>
@@ -35,7 +32,7 @@ function Ostukorv() {
       {tooted.map((toode, index) => 
         <div>
           {index}.
-          {toode} 
+          {toode.nimi} - {toode.hind}€ 
           <button onClick={() => kustuta(index)}>x</button> 
         </div>)}
 
@@ -44,6 +41,9 @@ function Ostukorv() {
         <div>Ostukorv on tühi</div>
         <div>Mine tooteid lisama <Link to="/avaleht">avalehele</Link> </div>
       </>}
+
+      {tooted.length > 0 && <div>Summa: {arvutaKokku()}€</div>}
+
     </div>
   )
 }

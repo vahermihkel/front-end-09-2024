@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import KontaktAndmed from '../../components/KontaktAndmed';
+import ostukorvJSON from "../../data/ostukorv.json";
 
 function Kinkekaart() {
   // Näide: keel ja esindused
@@ -24,14 +25,30 @@ function Kinkekaart() {
   const lisaOstukorvi = () => {
     if (emailSendRef.current.checked === false) {
       muudaSonum("Kinkekaardid summas " + (summa * kogus) + "€ lisatud ostukorvi");
+      ostukorvJSON.push({
+        "nimi": "Kinkekaart",
+        "hind": summa * kogus,
+        "aktiivne": true,
+        "pilt": ".jpg",
+        "keskus": ""
+      });
       return;
     }
 
     if (emailRef.current.value.includes("@") === false) {
       muudaSonum("Email ei ole õigel kujul");
-    } else {
-      muudaSonum("Kinkekaardid summas " + (summa * kogus) + "€ lisatud ostukorvi")
-    }
+      return;
+    } 
+
+    muudaSonum("Kinkekaardid summas " + (summa * kogus) + "€ lisatud ostukorvi")
+
+    ostukorvJSON.push({
+      "nimi": "Kinkekaart",
+      "hind": summa * kogus,
+      "aktiivne": true,
+      "pilt": ".jpg",
+      "keskus": ""
+    });
   }
 
   const muudaEmailSend = () => {

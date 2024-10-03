@@ -20,66 +20,66 @@ function Esindused() {
 
   const sorteeriAZ = () => {
     //keskused.sort();
-    keskused.sort((a,b) => a.localeCompare(b, "et"));
+    keskused.sort((a,b) => a.nimi.localeCompare(b.nimi, "et"));
     muudaKeskused(keskused.slice()); // HTMLi uuendamiseks
   }
 
   const sorteeriZA = () => {
     //keskused.sort();
     //keskused.reverse();
-    keskused.sort((a,b) => b.localeCompare(a, "et"));
+    keskused.sort((a,b) => b.nimi.localeCompare(a.nimi, "et"));
     muudaKeskused(keskused.slice());
   }
 
   const sorteeriTahedKasvavalt = () => {
-    keskused.sort((a,b) => a.length - b.length);
+    keskused.sort((a,b) => a.nimi.length - b.nimi.length);
     muudaKeskused(keskused.slice());
   }
 
   const sorteeriTahedKahanevalt = () => {
-    keskused.sort((a,b) => b.length - a.length);
+    keskused.sort((a,b) => b.nimi.length - a.nimi.length);
     muudaKeskused(keskused.slice());
   }
 
   const sorteeriKolmasTahtAZ = () => {
-    keskused.sort((a,b) => a[2].localeCompare(b[2]));
+    keskused.sort((a,b) => a.nimi[2].localeCompare(b.nimi[2]));
     muudaKeskused(keskused.slice());
   }
 
   const filtreeriEgaLoppevad = () => {
     // filtreerimisel tuleb teha uus muutuja, kuhu sisse lähevad alles jäetud elemendid
-    const vastus = esindusedFailist.filter(keskus => keskus.endsWith("e"));
+    const vastus = esindusedFailist.filter(keskus => keskus.nimi.endsWith("e"));
     muudaKeskused(vastus);
   }
 
   const filtreeriVah7Tahelised = () => {
-    const vastus = esindusedFailist.filter(keskus => keskus.length >= 7);
+    const vastus = esindusedFailist.filter(keskus => keskus.nimi.length >= 7);
     muudaKeskused(vastus);
   }
 
   const filtreeri9Tahelised = () => {
-    const vastus = esindusedFailist.filter(keskus => keskus.length === 9);
+    const vastus = esindusedFailist.filter(keskus => keskus.nimi.length === 9);
     muudaKeskused(vastus);
   }
 
   const filtreeriIsSisaldavad = () => {
-    const vastus = esindusedFailist.filter(keskus => keskus.includes("is"));
+    const vastus = esindusedFailist.filter(keskus => keskus.nimi.includes("is"));
     muudaKeskused(vastus);
   }
 
   const filtreeriNeljasTahtS = () => {
-    const vastus = esindusedFailist.filter(keskus => keskus[3] === "s");
+    const vastus = esindusedFailist.filter(keskus => keskus.nimi[3] === "s");
     muudaKeskused(vastus);
   }
 
   const otsi = () => {
-    const vastus = esindusedFailist.filter(keskus => keskus.includes(otsinguRef.current.value));
+    const vastus = esindusedFailist.filter(keskus => keskus.nimi.includes(otsinguRef.current.value));
     muudaKeskused(vastus);
   }
 
   const arvutaKokku = () => {
     let summa = 0;        //=> summa += keskus.length     ---> liida iseendale midagi juurde
-    keskused.forEach(keskus => summa = summa + keskus.length);
+    keskused.forEach(keskus => summa = summa + keskus.nimi.length);
     return summa;
   }
 
@@ -116,7 +116,8 @@ function Esindused() {
           <br />
           {keskused.map((keskus, index) => 
             <div>
-              {keskus} 
+              {keskus.nimi}: 
+              {keskus.tel}
               <Link to={"/esindus/" + index}>
                 <button>Vt lähemalt</button> 
               </Link>

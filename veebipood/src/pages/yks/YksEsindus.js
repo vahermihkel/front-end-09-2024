@@ -9,9 +9,9 @@ function YksEsindus() {
   return (
     <div>
       <div>Järjekorranumber: {index}</div>
-      <div>Esinduse nimi: {leitud}</div>
-      <div>Esinduse telefoninumber: </div>
-      <div>Esinduse aadress: </div>
+      <div>Esinduse nimi: {leitud.nimi}</div>
+      <div>Esinduse telefoninumber: {leitud.tel}</div>
+      <div>Esinduse aadress: {leitud.aadr}</div>
       {false && <div>Esindus on suletud</div>}
     </div>
   )

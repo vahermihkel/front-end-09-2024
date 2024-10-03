@@ -1,1 +1,12 @@
-[20, 8, 150, 3, 123, 32, 9, 1111, 71, 55]
+[
+  {"number": 20, "lisaja": "Mihkel"},
+  {"number": 8, "lisaja": "Mihkel"},
+  {"number": 150, "lisaja": "Mihkel"},
+  {"number": 3, "lisaja": "Mihkel"},
+  {"number": 123, "lisaja": "Mihkel"},
+  {"number": 32, "lisaja": "Mihkel"},
+  {"number": 9, "lisaja": "Mihkel"},
+  {"number": 1111, "lisaja": "Mihkel"},
+  {"number": 71, "lisaja": "Mihkel"},
+  {"number": 55, "lisaja": "Mihkel"}
+]
