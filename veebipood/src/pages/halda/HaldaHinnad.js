@@ -62,7 +62,7 @@ function HaldaHinnad() {
       <button onClick={lisa432}>Lisa 432</button>
       <br />
       {hinnad.map((hind, index) => 
-      <div>
+      <div key={index}>
         <div>{hind.number} ({hind.lisaja})</div>
         <button onClick={() => kustuta(index)}>x</button>
         <Link to={"/muuda-hind/" + index}>

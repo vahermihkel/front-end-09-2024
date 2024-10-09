@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Rating from '@mui/material/Rating';
 
 export const ContactUs = () => {
   const form = useRef();
@@ -23,6 +24,9 @@ export const ContactUs = () => {
 
   return (
     <form ref={form} onSubmit={sendEmail}>
+      <Rating
+        name="rating"
+      /> <br />
       <label>Name</label> <br />
       <input type="text" name="from_name" /> <br />
       <label>Email</label> <br />

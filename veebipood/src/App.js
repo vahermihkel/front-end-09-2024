@@ -14,7 +14,7 @@ import Registreeru from './pages/useRef/Registreeru';
 import Esindused from './pages/arrays/Esindused';
 import Ostukorv from './pages/arrays/Ostukorv';
 
-import Menyy from './components/Menyy';
+// import Menyy from './components/Menyy';
 import Hinnad from './pages/arrays/Hinnad';
 import Tootajad from './pages/arrays/Tootajad';
 import Tooted from './pages/arrays/Tooted';
@@ -33,14 +33,16 @@ import MuudaTootaja from './pages/muuda/MuudaTootaja';
 import { ContactUs } from './pages/useRef/ContactUs';
 import Admin from './pages/useState/Admin';
 import Shops from './pages/useState/Shops';
-
+import Menu from './components/Menu';
 
 function App() {
   return (
     <div className="App">
       {/* MENÜÜ ---> on igal lehel  nähtav */}
 
-      <Menyy />
+      <Menu />
+
+      {/* <Menyy /> */}
 
     
     {/* localhost:3000/avaleht  --->   <div>Olen avalehel</div> */}
@@ -71,7 +73,7 @@ function App() {
         <Route path='esindus/:index' element={ <YksEsindus /> } />
         <Route path='hind/:index' element={ <YksHind /> } />
         <Route path='tootaja' element={ <YksTootaja /> } />
-        <Route path='toode/:index' element={ <YksToode /> } />
+        <Route path='toode/:tooteNimi' element={ <YksToode /> } />
 
         <Route path='muuda-esindus/:index' element={ <MuudaEsindus /> } />
         <Route path='muuda-hind/:index' element={ <MuudaHind /> } />

@@ -90,7 +90,7 @@ function Hinnad() {
       <br /><br />
 
       {hinnad.map((hind, index) => 
-      <Link to={"/hind/" + index}>
+      <Link key={index} to={"/hind/" + index}>
         <button>{hind.number}</button>
       </Link>
       )}

@@ -115,7 +115,7 @@ function Esindused() {
           <button onClick={filtreeriNeljasTahtS}>Filtreeri kellel on neljas täht 's'</button>
           <br />
           {keskused.map((keskus, index) => 
-            <div>
+            <div key={index}>
               {keskus.nimi}: 
               {keskus.tel}
               <Link to={"/esindus/" + index}>

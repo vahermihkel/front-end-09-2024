@@ -30,7 +30,7 @@ function Ostukorv() {
       {tooted.length > 0 && <div>Tooteid kokku ostukorvis: {tooted.length} tk</div>}
 
       {tooted.map((toode, index) => 
-        <div>
+        <div key={index}>
           {index}.
           {toode.nimi} - {toode.hind}€ 
           <button onClick={() => kustuta(index)}>x</button> 
