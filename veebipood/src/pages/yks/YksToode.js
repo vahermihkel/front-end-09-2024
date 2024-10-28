@@ -10,7 +10,7 @@ function YksToode() {
   // SIIS: const {tere} = useParams();
 
 const {tooteNimi} = useParams();
-const leitud = tootedFailist.find(toode => toode.nimi === tooteNimi);
+const leitud = tootedFailist.find(toode => toode.nimi.replaceAll("/", "").replaceAll(" ", "-").toLowerCase() === tooteNimi);
 
 // index (järjekorranumbri) järgi leidmiseks:
 // const leitud = tootedFailist[index];

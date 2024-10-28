@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
-import ostukorvFailist from "../../data/ostukorv.json";
+// import ostukorvFailist from "../../data/ostukorv.json";
 
 function Ostukorv() {
   const { t } = useTranslation();
-  const [tooted, muudaTooted] = useState(ostukorvFailist.slice());
+  const [tooted, muudaTooted] = useState(JSON.parse(localStorage.getItem("ostukorv")) || []);
 
   const tyhjenda = () => {
-    ostukorvFailist.splice(0);
-    muudaTooted(ostukorvFailist.slice());
+    tooted.splice(0);
+    muudaTooted(tooted.slice()); // HTMLi muutmiseks
+    localStorage.setItem("ostukorv", JSON.stringify(tooted)); // salvestuseks
   }
 
   const kustuta = (index) => {
-    ostukorvFailist.splice(index,1);
-    muudaTooted(ostukorvFailist.slice());
+    tooted.splice(index,1);
+    muudaTooted(tooted.slice());
+    localStorage.setItem("ostukorv", JSON.stringify(tooted));
   }
 
   const arvutaKokku = () => {

@@ -34,12 +34,28 @@ import { ContactUs } from './pages/useRef/ContactUs';
 import Admin from './pages/useState/Admin';
 import Shops from './pages/useState/Shops';
 import Menu from './components/Menu';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
+  // setProducts, setCart, setCategories
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkTheme"));
+
+  const darkThemeTrue = () => {
+    setDarkMode("true");
+    localStorage.setItem("darkTheme", "true");
+  }
+
+  const darkThemeFalse = () => {
+    setDarkMode("false");
+    localStorage.setItem("darkTheme", "false");
+  }
+
+  return (     // if (darkMode===true) { "App-dark"} else {"App"}
+    <div className={darkMode === "true" ? "App-dark" : "App"}>
       {/* MENÜÜ ---> on igal lehel  nähtav */}
 
+      <button onClick={darkThemeTrue}>Dark</button>
+      <button onClick={darkThemeFalse}>Light</button>
       <Menu />
 
       {/* <Menyy /> */}
@@ -128,7 +144,19 @@ export default App;
 // 17. 28.10
 // 18. 06.11
 
+// Lisamine läbi LisaToode.js
+
 // KOJU:
-// Töötajad objektiks {nimi, tel, ametikoht, email}
-// MuudaEsindus, MuudaTootaja
-// Failid
+// 1. Webshopi Wordi dokument lõpetada
+// 2.a) mõni faili ülejäänud Wordi dokumentidest
+// 2. Webshopi localStorage: tõlge, dark/light, ostukorv
+// 3. Kõik ülejäänud Wordi dokumendid lõpetada
+
+// 1. Haldas dünaamiline CSS
+// 2. Keskus tuleks läbi dropdowni kui lisada uut toodet
+// 3. API päringud -> Tarnija failid + pakiautomaadid
+
+
+// Webshop:
+// Products.jsx --> <Link to={"/product/" + product.title} siia juurde lisada väikseks/tühikud asendada
+// Täpselt samasuguse asja peab tegema SingleProduct.jsx sees, kui otsitakse toodet

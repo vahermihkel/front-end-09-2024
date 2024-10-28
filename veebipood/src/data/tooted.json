@@ -1,7 +1,7 @@
 [
   {"nimi": "Nobe", "hind": 25000, "aktiivne": true, "keskus": "Ülemiste", "pilt": "https://estonia.ee/wp-content/uploads/nobe_netist_4.jpg"},
-  {"nimi": "BMW", "hind": 55000, "aktiivne": true, "keskus": "Ülemiste", "pilt": "https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/all-models/model-navigation/bmw-m850i-xdrive-cabrio-flyout-neu.png"},
-  {"nimi": "Tesla", "hind": 85000, "aktiivne": false, "keskus": "Vesse", "pilt": "https://cdn.motor1.com/images/mgl/Mk3qg6/s3/2017-tesla-roadster-deck-model-petersen-automotive-museum.jpg"},
+  {"nimi": "BMW i5", "hind": 55000, "aktiivne": true, "keskus": "Ülemiste", "pilt": "https://www.bmw-m.com/content/dam/bmw/marketBMW_M/www_bmw-m_com/all-models/model-navigation/bmw-m850i-xdrive-cabrio-flyout-neu.png"},
+  {"nimi": "Tesla model S/X", "hind": 85000, "aktiivne": false, "keskus": "Vesse", "pilt": "https://cdn.motor1.com/images/mgl/Mk3qg6/s3/2017-tesla-roadster-deck-model-petersen-automotive-museum.jpg"},
   {"nimi": "Bentley", "hind": 125000, "aktiivne": true, "keskus": "Kristiine", "pilt": "https://tallinn.bentleymotors.com/picserver1/userdata/1/31595/3FAdVwEMPE/dws%20600x300%20silverlake%20bentayga%20range.jpg"},
   {"nimi": "Toyota", "hind": 45000, "aktiivne": false, "keskus": "Järveotsa", "pilt": "https://www.motortrend.com/uploads/sites/10/2024/01/2024-toyota-corolla-hybrid-le-sedan-angular-front.png"},
   {"nimi": "Nissan", "hind": 35000, "aktiivne": true, "keskus": "Ülemiste", "pilt": "https://www-europe.nissan-cdn.net/content/dam/Nissan/nissan_europe/UNVEIL_QQ-PUSH/new-unveil-qashqai.png.ximg.l_3_m.smart.png"}

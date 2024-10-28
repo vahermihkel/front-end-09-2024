@@ -73,7 +73,9 @@ function Esindused() {
   }
 
   const otsi = () => {
-    const vastus = esindusedFailist.filter(keskus => keskus.nimi.includes(otsinguRef.current.value));
+    const vastus = esindusedFailist.filter(keskus => 
+      keskus.nimi.toLowerCase().includes(otsinguRef.current.value.toLowerCase())
+    );
     muudaKeskused(vastus);
   }
 

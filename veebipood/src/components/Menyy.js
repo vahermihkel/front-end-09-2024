@@ -7,6 +7,8 @@ function Menyy() {
   
   // return <h1>{t('Welcome to React')}</h1>
 
+  
+
   return (
     <div>
       <button onClick={() => i18n.changeLanguage("en")}>English</button>

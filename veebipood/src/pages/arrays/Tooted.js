@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import tootedJSON from "../../data/tooted.json"
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import ostukorvJSON from "../../data/ostukorv.json";
+// import ostukorvJSON from "../../data/ostukorv.json";
 import Button from '@mui/material/Button';
 
 // sorteeriAZ -> tehtud
@@ -68,8 +68,18 @@ function Tooted() {
   }
 
   const lisaOstukorvi = (lisatudToode) => {
-    ostukorvJSON.push(lisatudToode);
+    // ostukorvJSON.push(lisatudToode);
+    const ostukorvLS = JSON.parse(localStorage.getItem("ostukorv")) || [];
+    ostukorvLS.push(lisatudToode);
+    localStorage.setItem("ostukorv", JSON.stringify(ostukorvLS));
   }
+
+  // 1. Võtan localStorage-st vana ostukorvi sisu ( localStorage.getItem )
+  // 1.b Teen kontrolli, et kui on tühjus, siis tuleks tühi array ( || [] )
+  // 2. Võtan jutumärgid ära ( JSON.parse )
+  // 3. Lisan toote juurde / kustutan toote  ( .push   /   .splice )
+  // 4. Lisan localStorage-sse tagasi ( localStorage.setItem )
+  // 5. Lisan ostukorvi sisule jutumärgid tagasi ( JSON.stringify )
 
  
   return (
@@ -101,7 +111,7 @@ function Tooted() {
         <div key={index}>
           <img className={toode.aktiivne === true ? "pilt": "pilt-mitteaktiivne"} src={toode.pilt} alt="" />
           {toode.nimi} - {toode.hind}€
-          <Link to={"/toode/" + toode.nimi}>
+          <Link to={"/toode/" + toode.nimi.replaceAll("/", "").replaceAll(" ", "-").toLowerCase()}>
             <button>Vt lähemalt</button>
           </Link>
           {toode.aktiivne === true && <button onClick={() => lisaOstukorvi(toode)}>Lisa ostukorvi</button>}
